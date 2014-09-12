@@ -1,0 +1,28 @@
+apply plugin: 'java'
+apply plugin: 'eclipse'
+
+sourceCompatibility = 1.7
+version = '1.0'
+group = "com.github.bjoern2.exec.bridge"
+jar {
+    manifest {
+        attributes 'Implementation-Title': 'MPlayer bridge', 'Implementation-Version': version
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile 'org.apache.commons:commons-lang3:3.3.2+'
+    compile 'commons-io:commons-io:2.4+'
+}
+
+uploadArchives {
+    repositories {
+       flatDir {
+           dirs 'c:/develop/ivy'
+       }
+    }
+}
